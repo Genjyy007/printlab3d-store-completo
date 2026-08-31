@@ -1,0 +1,7 @@
+{
+  "name":"printlab3d-store",
+  "version":"1.0.0",
+  "private":true,
+  "scripts":{"start":"node server/server.js","dev":"node server/server.js"},
+  "dependencies":{"cors":"^2.8.5","dotenv":"^16.6.1","express":"^5.1.0","multer":"^2.0.2"}
+}

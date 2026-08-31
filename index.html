@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="PrintLab 3D — loja de impressão 3D, personalizados e modelos sob demanda.">
+  <meta name="theme-color" content="#0b0d14">
+  <title>PrintLab 3D — Impressão 3D premium</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+  <div class="announcement">🚀 Produção sob demanda • Frete calculado pelo CEP • PIX com desconto</div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="PrintLab 3D">
+      <span class="brand-mark">3D</span><span>Print<span>Lab</span></span>
+    </a>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu">☰</button>
+    <nav id="mainNav" class="main-nav">
+      <a href="#home">Início</a><a href="#catalogo">Produtos</a><a href="#personalizados">Personalizados</a><a href="#orcamento">Orçamento</a><a href="#sobre">Sobre</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="searchBtn" title="Pesquisar">⌕</button>
+      <button class="icon-btn" id="accountBtn" title="Minha conta">◯</button>
+      <button class="cart-btn" id="cartBtn"><span>🛒</span><b>Carrinho</b><em id="cartCount">0</em></button>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-noise"></div>
+      <div class="hero-content reveal">
+        <p class="eyebrow">IMPRESSÃO 3D • PERSONALIZAÇÃO • TECNOLOGIA</p>
+        <h1>Do arquivo <span>3D</span> para o seu mundo.</h1>
+        <p class="hero-sub">Modelos, presentes e peças funcionais produzidos sob demanda com acabamento premium. Escolha, personalize e receba em casa.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="#catalogo">Explorar produtos</a><a class="btn btn-ghost" href="#orcamento">Enviar meu modelo 3D</a></div>
+        <div class="trust-row"><span>✓ Produção sob demanda</span><span>✓ Acompanhamento do pedido</span><span>✓ Suporte via WhatsApp</span></div>
+      </div>
+      <div class="hero-visual reveal delay-1">
+        <div class="orb"></div><div class="grid-floor"></div>
+        <div class="floating-card fc-1"><small>QUALIDADE</small><strong>0,12 mm</strong><span>camada</span></div>
+        <div class="floating-card fc-2"><small>CLIENTES</small><strong>4,9/5</strong><span>avaliação</span></div>
+        <div class="product-stage"><div class="product-shape"><span></span><span></span><span></span></div></div>
+      </div>
+    </section>
+
+    <section class="stats-strip"><div><strong>+1.200</strong><span>pedidos entregues</span></div><div><strong>25+</strong><span>cores disponíveis</span></div><div><strong>4</strong><span>materiais</span></div><div><strong>48h</strong><span>início médio da produção</span></div></section>
+
+    <section id="catalogo" class="section">
+      <div class="section-heading"><div><p class="eyebrow">CATÁLOGO</p><h2>Peças prontas para ganhar vida</h2></div><button class="text-btn" id="clearFilters">Limpar filtros ↗</button></div>
+      <div class="catalog-layout">
+        <aside class="filters glass">
+          <div class="filter-top"><h3>Filtros</h3><button id="closeFilters" class="icon-btn mobile-only">×</button></div>
+          <label>Buscar<input id="searchInput" type="search" placeholder="Ex.: dragão, vaso..."></label>
+          <label>Categoria<select id="categoryFilter"><option value="all">Todas</option><option>Geek</option><option>Decoração</option><option>Utilidades</option><option>Presentes</option><option>Suportes</option></select></label>
+          <label>Material<select id="materialFilter"><option value="all">Todos</option><option>PLA</option><option>PETG</option><option>ABS</option><option>Resina</option></select></label>
+          <label>Preço máximo<input id="priceFilter" type="range" min="20" max="300" step="5" value="300"><span id="priceValue">Até R$ 300,00</span></label>
+          <label class="check"><input id="saleFilter" type="checkbox"> Somente promoções</label>
+          <button class="btn btn-primary full" id="applyFilters">Aplicar</button>
+        </aside>
+        <div class="products-area">
+          <div class="toolbar"><span id="resultCount">0 produtos</span><div><button class="filter-mobile-btn" id="mobileFilterBtn">☷ Filtros</button><select id="sortSelect"><option value="popular">Mais populares</option><option value="priceAsc">Menor preço</option><option value="priceDesc">Maior preço</option><option value="rating">Melhor avaliados</option><option value="newest">Mais recentes</option></select></div></div>
+          <div id="productGrid" class="product-grid"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-banner section"><div class="feature-copy"><p class="eyebrow">IMPRESSÃO PERSONALIZADA</p><h2>Você manda o arquivo.<br><span>A gente faz acontecer.</span></h2><p>Envie STL, OBJ ou 3MF, escolha material, cor, qualidade e acabamento. Nossa calculadora estima peso, tempo e preço para você.</p><a class="btn btn-primary" href="#orcamento">Calcular minha impressão</a></div><div class="file-drop-demo"><div class="drop-icon">↥</div><strong>Arraste seu arquivo 3D aqui</strong><span>STL • OBJ • 3MF • até 50 MB</span></div></section>
+
+    <section id="personalizados" class="section alt"><div class="section-heading"><div><p class="eyebrow">CONFIGURADOR</p><h2>Crie um produto do seu jeito</h2></div></div>
+      <div class="configurator glass">
+        <div class="config-preview"><div id="customPreview" class="custom-preview"><div class="custom-text" id="previewText">SEU TEXTO</div></div><div class="preview-note">Pré-visualização 3D ilustrativa</div></div>
+        <div class="config-form"><label>Texto<input id="customText" maxlength="20" value="SEU TEXTO"></label><label>Cor<select id="customColor"><option value="preto">Preto</option><option value="branco">Branco</option><option value="roxo">Roxo</option><option value="azul">Azul</option><option value="vermelho">Vermelho</option></select></label><label>Material<select id="customMaterial"><option>PLA</option><option>PETG</option><option>Resina</option></select></label><label>Tamanho<select id="customSize"><option value="P">P</option><option value="M" selected>M</option><option value="G">G</option></select></label><div class="price-box"><small>A partir de</small><strong id="customPrice">R$ 39,90</strong></div><button class="btn btn-primary full" id="addCustomBtn">Adicionar personalizado</button></div>
+      </div>
+    </section>
+
+    <section id="orcamento" class="section"><div class="section-heading"><div><p class="eyebrow">ORÇAMENTO 3D</p><h2>Envie seu modelo</h2><p>O simulador abaixo funciona no navegador e salva sua solicitação localmente. Para orçamento técnico final, a equipe revisa o arquivo.</p></div></div>
+      <div class="quote-layout"><form id="quoteForm" class="quote-form glass"><div class="dropzone" id="dropzone"><input type="file" id="modelFile" accept=".stl,.obj,.3mf" hidden><div class="drop-icon">↥</div><strong>Escolher modelo 3D</strong><span>STL, OBJ ou 3MF • até 50 MB</span><button type="button" class="btn btn-ghost" id="chooseFile">Selecionar arquivo</button><p id="fileName" class="file-name"></p></div><div class="form-grid"><label>Material<select id="quoteMaterial"><option value="PLA">PLA</option><option value="PETG">PETG</option><option value="ABS">ABS</option><option value="Resina">Resina</option></select></label><label>Cor<select id="quoteColor"><option>Preto</option><option>Branco</option><option>Roxo</option><option>Azul</option><option>Vermelho</option></select></label><label>Quantidade<input id="quoteQty" type="number" min="1" value="1"></label><label>Qualidade<select id="quoteQuality"><option value="standard">Padrão</option><option value="fine">Fina</option><option value="ultra">Ultra</option></select></label></div><label>Observações<textarea id="quoteNotes" rows="4" placeholder="Tamanho desejado, acabamento, uso da peça..."></textarea><button class="btn btn-primary full" type="submit">Calcular estimativa</button></form>
+        <aside id="quoteResult" class="quote-result glass"><p class="eyebrow">SIMULAÇÃO</p><h3>Seu orçamento aparece aqui</h3><div class="quote-placeholder">Envie um arquivo e escolha as opções para ver uma estimativa.</div></aside></div>
+    </section>
+
+    <section class="section process"><div class="section-heading"><div><p class="eyebrow">COMO FUNCIONA</p><h2>Do clique à entrega</h2></div></div><div class="process-grid"><article><span>01</span><h3>Escolha</h3><p>Encontre uma peça pronta ou envie seu próprio modelo.</p></article><article><span>02</span><h3>Personalize</h3><p>Defina material, cor, tamanho e acabamento.</p></article><article><span>03</span><h3>Produção</h3><p>A peça entra na fila e você acompanha cada etapa.</p></article><article><span>04</span><h3>Entrega</h3><p>Receba em casa ou escolha retirada local.</p></article></div></section>
+
+    <section id="sobre" class="section about"><div><p class="eyebrow">PRINTLAB 3D</p><h2>Precisão para peças que precisam ser mais do que bonitas.</h2></div><div><p>Trabalhamos com impressão sob demanda para diminuir desperdício, oferecer personalização e entregar uma experiência de compra clara do orçamento ao rastreio.</p><div class="chips"><span>PLA</span><span>PETG</span><span>ABS</span><span>RESINA</span><span>PERSONALIZADOS</span></div></div></section>
+  </main>
+
+  <footer class="footer"><div><a class="brand" href="#home"><span class="brand-mark">3D</span><span>Print<span>Lab</span></span></a><p>Impressão 3D, personalizados e ideias reais.</p></div><div><h4>Loja</h4><a href="#catalogo">Produtos</a><a href="#personalizados">Personalizados</a><a href="#orcamento">Orçamento</a></div><div><h4>Atendimento</h4><a href="#">FAQ</a><a href="#">Trocas e devoluções</a><a href="#">Privacidade</a></div><div><h4>Contato</h4><a href="https://wa.me/5500000000000" target="_blank" rel="noopener">WhatsApp</a><a href="mailto:contato@printlab3d.local">E-mail</a></div><div class="footer-bottom">© 2026 PrintLab 3D • Demo full-stack preparada para integração real.</div></footer>
+
+  <div id="toast" class="toast" role="status"></div>
+  <div id="overlay" class="overlay"></div>
+
+  <aside id="cartDrawer" class="drawer" aria-hidden="true"><div class="drawer-head"><h2>Seu carrinho</h2><button class="icon-btn" id="closeCart">×</button></div><div id="cartItems" class="cart-items"></div><div class="coupon"><input id="couponInput" placeholder="Cupom de desconto"><button id="couponBtn">Aplicar</button></div><div class="cart-summary"><div><span>Subtotal</span><strong id="cartSubtotal">R$ 0,00</strong></div><div><span>Desconto</span><strong id="cartDiscount">- R$ 0,00</strong></div><div><span>Frete</span><strong id="cartShipping">R$ 0,00</strong></div><div class="total"><span>Total</span><strong id="cartTotal">R$ 0,00</strong></div><label class="cep-field">CEP para frete<input id="shippingCep" inputmode="numeric" maxlength="9" placeholder="00000-000"></label><button class="btn btn-primary full" id="checkoutBtn">Ir para checkout</button></div></aside>
+
+  <div id="productModal" class="modal"><div class="modal-card product-modal"><button class="modal-close" id="closeProductModal">×</button><div id="productModalContent"></div></div></div>
+  <div id="checkoutModal" class="modal"><div class="modal-card checkout-modal"><button class="modal-close" id="closeCheckout">×</button><div class="checkout-head"><p class="eyebrow">CHECKOUT</p><h2>Finalize seu pedido</h2></div><form id="checkoutForm"><div class="form-grid"><label>Nome completo<input id="customerName" required></label><label>E-mail<input id="customerEmail" type="email" required></label><label>CPF<input id="customerCpf" inputmode="numeric" required></label><label>WhatsApp<input id="customerPhone" required></label><label>CEP<input id="customerCep" inputmode="numeric" required></label><label>Número<input id="customerNumber" required></label><label class="wide">Endereço<input id="customerAddress" required></label><label class="wide">Complemento<input id="customerComplement"></label><label>Pagamento<select id="paymentMethod"><option value="pix">PIX — 5% de desconto</option><option value="card">Cartão de crédito</option><option value="boleto">Boleto</option></select></label></div><div class="checkout-summary" id="checkoutSummary"></div><button class="btn btn-primary full" type="submit">Confirmar pedido</button></form></div></div>
+
+  <div id="accountModal" class="modal"><div class="modal-card account-modal"><button class="modal-close" id="closeAccount">×</button><p class="eyebrow">MINHA CONTA</p><h2>Área do cliente</h2><div class="account-grid"><div><span>Pedidos</span><strong id="accountOrders">0</strong></div><div><span>Favoritos</span><strong id="accountFavorites">0</strong></div><div><span>Pontos</span><strong id="accountPoints">0</strong></div></div><div class="account-orders" id="accountOrdersList"></div></div></div>
+
+  <script src="js/products.js"></script><script src="js/app.js"></script>
+</body>
+</html>
